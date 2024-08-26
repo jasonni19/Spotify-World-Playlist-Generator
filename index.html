@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Enter a Country!</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<style>
+
+    body {
+        font-family: verdana, Helvetica;
+        background-color: #103330;
+        margin: 0;
+        padding: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+    }
+
+
+    #container {
+        background-color: #42a0e7;
+        padding: 100px;
+        border-radius: 10px;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #274e13;
+    }
+
+  #suggestionsList {
+     width: 150px; /* Adjust width as needed */
+    margin-top:50px;
+     margin-right: 20px; /* Add some margin to the right */
+  }
+
+  #playlist {
+      margin-top: 90px; /* Adjust as needed */
+  }
+
+    form {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+
+    }
+
+    input[type="text"] {
+        margin-top: 30px;
+        padding: 50px;
+        border-radius: 5px;
+        border: none;
+        width: 300px;
+    }
+
+    input[type="submit"] {
+
+      margin-top: 20px;
+        padding: 50px 50px;
+        border-radius: 10px;
+        border: none;
+        background-color: #274e13;
+        color: #274e13;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #1a3a4d;
+    }
+
+    input[type ="click"] {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      width: 100px;
+
+    }
+
+  #earth {
+     
+      position: absolute;
+      top: 20px; /* Position the earth at the top of the screen */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%);
+      animation: rotateEarth 10s linear infinite; /* Adjust 
+    duration as needed */
+      margin_bottom: 30px;
+  }
+
+  @keyframes rotateEarth {
+      from {
+          transform: translateX(-50%) rotate(0deg);
+      }
+      to {
+          transform: translateX(-50%) rotate(360deg);
+      }
+  }
+
+  
+</style>
+</head>
+
+<body>
+  
+<div id="container">
+  <div id="earth" class="animate__animated animate__fadeInDown">
+      <img src="https://pngfre.com/wp-content/uploads/earth-png-from-pngfre-29.png" alt="Earth" width="100">
+  </div>
+
+
+    <h1><p style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">EXPLORE SONGS FROM DIFFERENT COUNTRIES!!</h1>
+
+  <h2><p</h2>
+
+    <form id="countryForm" action="#" method="post">
+      
+       <label for="countrySelect">Choose your country:</label><br>
+
+
+       <select id="countrySelect" name="countrySelect" required>
+            <option value="" disabled selected>Select your country</option>
+          <option value="AD">Andorra</option>
+          <option value="AR">Argentina</option>
+          <option value="AU">Australia</option>
+          <option value="AT">Austria</option>
+          <option value="BE">Belgium</option>
+          <option value="BO">Bolivia</option>
+          <option value="BR">Brazil</option>
+          <option value="BG">Bulgaria</option>
+          <option value="CA">Canada</option>
+          <option value="CL">Chile</option>
+          <option value="CO">Colombia</option>
+          <option value="CR">Costa Rica</option>
+          <option value="CY">Cyprus</option>
+          <option value="CZ">Czech Republic</option>
+          <option value="DK">Denmark</option>
+          <option value="DO">Dominican Republic</option>
+          <option value="EC">Ecuador</option>
+          <option value="SV">El Salvador</option>
+          <option value="EE">Estonia</option>
+          <option value="FI">Finland</option>
+          <option value="FR">France</option>
+          <option value="DE">Germany</option>
+          <option value="GR">Greece</option>
+          <option value="GT">Guatemala</option>
+          <option value="HN">Honduras</option>
+          <option value="HK">Hong Kong</option>
+          <option value="HU">Hungary</option>
+          <option value="IS">Iceland</option>
+          <option value="ID">Indonesia</option>
+          <option value="IE">Ireland</option>
+          <option value="IT">Italy</option>
+          <option value="JP">Japan</option>
+          <option value="LV">Latvia</option>
+          <option value="LI">Liechtenstein</option>
+          <option value="LT">Lithuania</option>
+          <option value="LU">Luxembourg</option>
+          <option value="MY">Malaysia</option>
+          <option value="MT">Malta</option>
+          <option value="MX">Mexico</option>
+          <option value="MC">Monaco</option>
+          <option value="NL">Netherlands</option>
+          <option value="NZ">New Zealand</option>
+          <option value="NI">Nicaragua</option>
+          <option value="NO">Norway</option>
+          <option value="PA">Panama</option>
+          <option value="PY">Paraguay</option>
+          <option value="PE">Peru</option>
+          <option value="PH">Philippines</option>
+          <option value="PL">Poland</option>
+          <option value="PT">Portugal</option>
+          <option value="SG">Singapore</option>
+          <option value="ES">Spain</option>
+          <option value="SK">Slovakia</option>
+          <option value="SE">Sweden</option>
+          <option value="CH">Switzerland</option>
+          <option value="TW">Taiwan</option>
+          <option value="TR">Turkey</option>
+          <option value="UK">United Kingdom</option>
+          <option value="USA">United States</option>
+          <option value="UY">Uruguay</option>
+        </select><br><br>
+
+    </form>
+  
+  <button id ="goToWebsiteButton" onclick="sendCountries()" style="width: 200px; height: 40px;  display: block; margin-left: auto; margin-right: auto;display: none; font-family: verdana; margin-top:30px; padding-bottom: 60px; " >View your playlist that captures the sounds and voices around the world! </button>
+
+  <div id="suggestions">
+      <h2>Your Countries:</h2>
+      <ul id="myList">
+          <!-- List items will be dynamically added here -->
+      </ul>
+  </div>
+  
+  <div id="playlist">
+      <h2>Songs:</h2>
+      <ul>
+          <li>{{ data.song1 }}</li>
+          <li>{{ data.song2 }}</li>
+          <li>{{ data.song3 }}</li>
+          <li>{{ data.song4 }}</li>
+          <li>{{ data.song5 }}</li>
+          <li>{{ data.song6 }}</li>
+          <li>{{ data.song7 }}</li>
+          <li>{{ data.song8 }}</li>
+          <li>{{ data.song9 }}</li>
+           <li>{{ data.song10 }}</li>
+          <!-- Add more list items as needed -->
+      </ul>
+  </div>
+
+</div>
+
+<script>
+  const countries = new Set();
+  var selectedCountry;
+
+  goToWebsiteButton.addEventListener("click", function() {
+     // Redirect the user to the new website
+    
+     //window.location.href = "https://open.spotify.com/" + selectedCountry;
+   });
+  // Define the addItem function outside of the event listener
+  function addItem(country) {
+      countries.add(country);
+      // Create a new list item
+      var li = document.createElement("li");
+      var text = document.createTextNode(country);
+      li.appendChild(text);
+
+      // Append the new list item to the existing list
+      document.getElementById("myList").appendChild(li);
+  }
+
+  // Add change event listener to the dropdown menu
+  document.getElementById("countrySelect").addEventListener("change", function() {
+    selectedCountry = this.value; // Get the selected country
+
+    // Display the button
+    document.getElementById("goToWebsiteButton").style.display = "block";
+
+    // Add the selected country to the list
+    addItem(selectedCountry);
+  });
+
+  document.getElementById("countryForm").addEventListener("submit", function(event){
+     event.preventDefault(); // Prevent the default form submission behavior
+
+     // Get the selected country from the dropdown menu
+     var selectedCountry = document.getElementById("countrySelect").value;
+
+     // Display the button corresponding to the selected country
+     document.getElementById("goToWebsiteButton").style.display = "block";
+
+     // Append the selected country to the list of countries
+     addItem(selectedCountry);
+
+     var suggestionsDiv = document.getElementById("suggestions");
+     suggestionsDiv.innerHTML = "<p style='text-align: center; '>Song Suggestions for " + selectedCountry + ":</p>";
+
+  });
+
+  
+  function sendCountries() {
+      console.log(countries)
+      var countriesArray = Array.from(countries);
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "/button_click");
+      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    
+      xhr.onload = function () {
+          if (xhr.status === 200) {
+              alert("Button clicked!");
+          } else {
+              alert("Error: " + xhr.statusText);
+          }
+      };
+      xhr.send(JSON.stringify({ countries: countriesArray }));
+  }
+  
+</script>
+</body>
+</html>
